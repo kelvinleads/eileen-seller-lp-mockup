@@ -99,7 +99,7 @@ section{padding:96px 0}
 .homes{background:var(--green-tint)}
 .homes .lede{margin:16px 0 40px}
 .home-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.home{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:24px;align-items:center;background:#fff;border-radius:12px;padding:22px 26px;border:1px solid #d6e4dd}
+.home{display:grid;grid-template-columns:112px 1.6fr 1fr 1fr;gap:24px;align-items:center;background:#fff;border-radius:12px;padding:22px 26px;border:1px solid #d6e4dd}
 .home h3{font-size:19px;margin-bottom:8px}
 .flaws{display:flex;flex-wrap:wrap;gap:6px}
 .flaw{font:500 12.5px var(--sans);color:#7a2f1f;background:#fbefeb;border-radius:999px;padding:4px 10px}
@@ -214,7 +214,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   .pain-grid{gap:16px}
   .pain-item h3{font-size:17px}.pain-item p{font-size:14px}
   .home{grid-template-columns:1fr 1fr;padding:18px}
-  .home>div:first-child{grid-column:1/-1}
   .after b{font-size:22px}
   .terms-grid{grid-template-columns:1fr}
   .stamp{right:8px;bottom:-18px}.stamp b{font-size:26px}
@@ -227,6 +226,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .wiifm li{position:relative;padding-left:30px;font-size:16.5px;color:#d4e6de}
 .wiifm li b{color:#fff}
 .wiifm li::before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;border-radius:50%;background:#d4e6de url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a6350' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 4.5 4.5L19 7'/%3E%3C/svg%3E") center/12px no-repeat}
+.home-img{width:112px;height:112px;object-fit:cover;border-radius:10px}
+.illus{margin-top:12px;font:400 13px var(--sans);color:var(--muted)}
+@media (max-width:720px){.home{grid-template-columns:1fr 1fr;padding:0 0 18px;overflow:hidden;gap:14px 16px}.home-img{grid-column:1/-1;width:100%;height:170px;border-radius:0}.home>div{padding:0 18px}.home>div:nth-child(2){grid-column:1/-1}.home>div:nth-child(3){padding-right:0}}
 </style>
 </head>
 <body>
@@ -307,12 +309,13 @@ setTimeout(function(){document.documentElement.classList.add('ready')},1600);
     <h2 id="h-homes">These homes had problems buyers didn't like. I still sold every one.</h2>
     <p class="lede">Low floor, west sun, tenants, no lift. Here's how long each one sat on the market before me, and what it sold for.</p>
     <ul class="home-list">
-      <li class="home"><div><h3>4-room corner HDB, Ang Mo Kio</h3><span class="flaws"><span class="flaw">Low floor</span><span class="flaw">Facing the carpark</span><span class="flaw">MRT works next door</span></span></div><div class="before"><small>Before me</small>3 months, no offers</div><div class="after"><small>Sold for</small><b class="num">$526,168</b><span>in 6 weeks</span></div></li>
-      <li class="home"><div><h3>4-room HDB, Hougang</h3><span class="flaws"><span class="flaw">Tenanted</span><span class="flaw">Cluttered and dusty</span></span></div><div class="before"><small>Before me</small>4 to 6 months, no offers</div><div class="after"><small>Sold for</small><b class="num">$698,000</b><span>in 3 weeks</span></div></li>
-      <li class="home"><div><h3>3-bedroom condo, Bartley</h3><span class="flaws"><span class="flaw">Low floor</span><span class="flaw">Direct west sun</span><span class="flaw">Student tenants</span></span></div><div class="before"><small>Before me</small>1.5 years, best offer $1.6M</div><div class="after"><small>Sold for</small><b class="num">$1.62M</b><span>in 3 weeks</span></div></li>
-      <li class="home"><div><h3>2-bedroom condo, Pasir Ris</h3><span class="flaws"><span class="flaw">Facing BTO construction</span><span class="flaw">Next to the bus interchange</span></span></div><div class="before"><small>Before me</small>6 months, no offers</div><div class="after"><small>Sold for</small><b class="num">$1.67M</b><span>in 2 months</span></div></li>
-      <li class="home"><div><h3>Cluster house, Ang Mo Kio</h3><span class="flaws"><span class="flaw">30 years old</span><span class="flaw">No lift</span><span class="flaw">Old-style renovation</span></span></div><div class="before"><small>Before me</small>1 year, best offer $2.7M</div><div class="after"><small>Sold for</small><b class="num">$2.975M</b><span>in 3 months</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-amk-hdb.jpg" alt="" loading="lazy"><div><h3>4-room corner HDB, Ang Mo Kio</h3><span class="flaws"><span class="flaw">Low floor</span><span class="flaw">Facing the carpark</span><span class="flaw">MRT works next door</span></span></div><div class="before"><small>Before me</small>3 months, no offers</div><div class="after"><small>Sold for</small><b class="num">$526,168</b><span>in 6 weeks</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-hougang-hdb.jpg" alt="" loading="lazy"><div><h3>4-room HDB, Hougang</h3><span class="flaws"><span class="flaw">Tenanted</span><span class="flaw">Cluttered and dusty</span></span></div><div class="before"><small>Before me</small>4 to 6 months, no offers</div><div class="after"><small>Sold for</small><b class="num">$698,000</b><span>in 3 weeks</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-bartley-condo.jpg" alt="" loading="lazy"><div><h3>3-bedroom condo, Bartley</h3><span class="flaws"><span class="flaw">Low floor</span><span class="flaw">Direct west sun</span><span class="flaw">Student tenants</span></span></div><div class="before"><small>Before me</small>1.5 years, best offer $1.6M</div><div class="after"><small>Sold for</small><b class="num">$1.62M</b><span>in 3 weeks</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-pasirris-condo.jpg" alt="" loading="lazy"><div><h3>2-bedroom condo, Pasir Ris</h3><span class="flaws"><span class="flaw">Facing BTO construction</span><span class="flaw">Next to the bus interchange</span></span></div><div class="before"><small>Before me</small>6 months, no offers</div><div class="after"><small>Sold for</small><b class="num">$1.67M</b><span>in 2 months</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-amk-cluster.jpg" alt="" loading="lazy"><div><h3>Cluster house, Ang Mo Kio</h3><span class="flaws"><span class="flaw">30 years old</span><span class="flaw">No lift</span><span class="flaw">Old-style renovation</span></span></div><div class="before"><small>Before me</small>1 year, best offer $2.7M</div><div class="after"><small>Sold for</small><b class="num">$2.975M</b><span>in 3 months</span></div></li>
     </ul>
+    <p class="illus">Photos are illustrations, not the actual units.</p>
     <p class="method"><strong>What I changed each time:</strong> a listing that leads with what buyers want, AI-decluttered photos, a designer-style video tour, and a price set against what your block has actually sold for.</p>
   </div>
 </section>
