@@ -104,7 +104,8 @@ section{padding:96px 0}
 .flaws{display:flex;flex-wrap:wrap;gap:6px}
 .flaw{font:500 12.5px var(--sans);color:#7a2f1f;background:#fbefeb;border-radius:999px;padding:4px 10px}
 .before small,.after small{display:block;font:700 11.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.before{color:var(--muted);font-size:15.5px}
+.before b{display:block;font:700 26px/1.1 var(--serif);color:#a23a22}
+.before span{font:500 14px var(--sans);color:var(--muted)}
 .after b{display:block;font:700 26px/1.1 var(--serif);color:var(--green)}
 .after span{font:500 14px var(--sans)}
 .method{margin-top:30px;font-size:16.5px;max-width:74ch}
@@ -229,6 +230,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .home-img{width:112px;height:112px;object-fit:cover;border-radius:10px}
 .illus{margin-top:12px;font:400 13px var(--sans);color:var(--muted)}
 @media (max-width:720px){.home{grid-template-columns:1fr 1fr;padding:0 0 18px;overflow:hidden;gap:14px 16px}.home-img{grid-column:1/-1;width:100%;height:170px;border-radius:0}.home>div{padding:0 18px}.home>div:nth-child(2){grid-column:1/-1}.home>div:nth-child(3){padding-right:0}}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;align-items:start}
+.shot{margin:0}
+.shot-frame{border-radius:28px;overflow:hidden;border:8px solid #111;box-shadow:0 24px 50px -24px rgba(13,16,15,.5);background:#efe7dd}
+.shot-frame img{width:100%;height:100%;object-fit:cover;object-position:top}
+.shot figcaption{margin-top:12px;font:400 14px/1.4 var(--sans);color:var(--muted)}
+.shot figcaption b{display:block;color:var(--green);font:700 15px var(--sans)}
+@media (max-width:720px){.shots{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}.shot{scroll-snap-align:start}}
 </style>
 </head>
 <body>
@@ -249,7 +257,7 @@ setTimeout(function(){document.documentElement.classList.add('ready')},1600);
   <div class="wrap">
     <div class="hero-copy">
       <span class="tag">FOR HDB &amp; CONDO SELLERS</span>
-      <h1 id="h-hero">How I Use the <em>4F Framework</em> to Get Your Home <mark>Sold FAST</mark>, Even If It's Been Stuck for Years</h1>
+      <h1 id="h-hero">How I Use the <em>4F Framework</em> to Get Homes <mark>Sold in as Little as 3 Weeks</mark>, Even After Years on the Market</h1>
       <p class="lede">One condo sat unsold for 2 years. With these 4 checks, I sold it in <strong>3 weeks for $300,000 more</strong> than its best offer, without cutting the price.</p>
       <div class="cta-row">
         <a class="btn" href="#book">Book my free 4F check<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -309,11 +317,11 @@ setTimeout(function(){document.documentElement.classList.add('ready')},1600);
     <h2 id="h-homes">These homes had problems buyers didn't like. I still sold every one.</h2>
     <p class="lede">Low floor, west sun, tenants, no lift. Here's how long each one sat on the market before me, and what it sold for.</p>
     <ul class="home-list">
-      <li class="home"><img class="home-img" src="img/homes/home-amk-hdb.jpg" alt="" loading="lazy"><div><h3>4-room corner HDB, Ang Mo Kio</h3><span class="flaws"><span class="flaw">Low floor</span><span class="flaw">Facing the carpark</span><span class="flaw">MRT works next door</span></span></div><div class="before"><small>Before me</small>3 months, no offers</div><div class="after"><small>Sold for</small><b class="num">$526,168</b><span>in 6 weeks</span></div></li>
-      <li class="home"><img class="home-img" src="img/homes/home-hougang-hdb.jpg" alt="" loading="lazy"><div><h3>4-room HDB, Hougang</h3><span class="flaws"><span class="flaw">Tenanted</span><span class="flaw">Cluttered and dusty</span></span></div><div class="before"><small>Before me</small>4 to 6 months, no offers</div><div class="after"><small>Sold for</small><b class="num">$698,000</b><span>in 3 weeks</span></div></li>
-      <li class="home"><img class="home-img" src="img/homes/home-bartley-condo.jpg" alt="" loading="lazy"><div><h3>3-bedroom condo, Bartley</h3><span class="flaws"><span class="flaw">Low floor</span><span class="flaw">Direct west sun</span><span class="flaw">Student tenants</span></span></div><div class="before"><small>Before me</small>1.5 years, best offer $1.6M</div><div class="after"><small>Sold for</small><b class="num">$1.62M</b><span>in 3 weeks</span></div></li>
-      <li class="home"><img class="home-img" src="img/homes/home-pasirris-condo.jpg" alt="" loading="lazy"><div><h3>2-bedroom condo, Pasir Ris</h3><span class="flaws"><span class="flaw">Facing BTO construction</span><span class="flaw">Next to the bus interchange</span></span></div><div class="before"><small>Before me</small>6 months, no offers</div><div class="after"><small>Sold for</small><b class="num">$1.67M</b><span>in 2 months</span></div></li>
-      <li class="home"><img class="home-img" src="img/homes/home-amk-cluster.jpg" alt="" loading="lazy"><div><h3>Cluster house, Ang Mo Kio</h3><span class="flaws"><span class="flaw">30 years old</span><span class="flaw">No lift</span><span class="flaw">Old-style renovation</span></span></div><div class="before"><small>Before me</small>1 year, best offer $2.7M</div><div class="after"><small>Sold for</small><b class="num">$2.975M</b><span>in 3 months</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-amk-hdb.jpg" alt="" loading="lazy"><div><h3>4-room corner HDB, Ang Mo Kio</h3><span class="flaws"><span class="flaw">Low floor</span><span class="flaw">Facing the carpark</span><span class="flaw">MRT works next door</span></span></div><div class="before"><small>Stuck for</small><b class="num">3 months</b><span>No offers</span></div><div class="after"><small>Sold for</small><b class="num">$526,168</b><span>in 6 weeks</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-hougang-hdb.jpg" alt="" loading="lazy"><div><h3>4-room HDB, Hougang</h3><span class="flaws"><span class="flaw">Tenanted</span><span class="flaw">Cluttered and dusty</span></span></div><div class="before"><small>Stuck for</small><b class="num">4 to 6 months</b><span>No offers</span></div><div class="after"><small>Sold for</small><b class="num">$698,000</b><span>in 3 weeks</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-bartley-condo.jpg" alt="" loading="lazy"><div><h3>3-bedroom condo, Bartley</h3><span class="flaws"><span class="flaw">Low floor</span><span class="flaw">Direct west sun</span><span class="flaw">Student tenants</span></span></div><div class="before"><small>Stuck for</small><b class="num">1.5 years</b><span>Best offer $1.6M</span></div><div class="after"><small>Sold for</small><b class="num">$1.62M</b><span>in 3 weeks</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-pasirris-condo.jpg" alt="" loading="lazy"><div><h3>2-bedroom condo, Pasir Ris</h3><span class="flaws"><span class="flaw">Facing BTO construction</span><span class="flaw">Next to the bus interchange</span></span></div><div class="before"><small>Stuck for</small><b class="num">6 months</b><span>No offers</span></div><div class="after"><small>Sold for</small><b class="num">$1.67M</b><span>in 2 months</span></div></li>
+      <li class="home"><img class="home-img" src="img/homes/home-amk-cluster.jpg" alt="" loading="lazy"><div><h3>Cluster house, Ang Mo Kio</h3><span class="flaws"><span class="flaw">30 years old</span><span class="flaw">No lift</span><span class="flaw">Old-style renovation</span></span></div><div class="before"><small>Stuck for</small><b class="num">1 year</b><span>Best offer $2.7M</span></div><div class="after"><small>Sold for</small><b class="num">$2.975M</b><span>in 3 months</span></div></li>
     </ul>
     <p class="illus">Photos are illustrations, not the actual units.</p>
     <p class="method"><strong>What I changed each time:</strong> a listing that leads with what buyers want, AI-decluttered photos, a designer-style video tour, and a price set against what your block has actually sold for.</p>
@@ -328,7 +336,8 @@ setTimeout(function(){document.documentElement.classList.add('ready')},1600);
   <div class="wrap">
     <h2 id="h-voices">What sellers told me after it sold</h2>
     <p class="lede">In their own words, from their messages to me.</p>
-    <div class="chats"><figure class="chat"><figcaption class="chat-head"><span class="av">V</span><span><b>VK</b>Cluster house, Ang Mo Kio</span></figcaption><div class="chat-body"><p class="bub">From beginning to end, Eileen has been a very reliable, knowledgeable, and empathetic sales professional</p><p class="bub">My mum and I deeply appreciate her patience and determination in securing the sale of our previous home, even when faced with challenges</p><p class="bub">Even after the sale was completed, she still made the effort to check in on us with reminders and advice</p><p class="bub">We felt that we were in good, trustworthy hands with Eileen during the whole journey. Thank you!</p></div></figure><figure class="chat"><figcaption class="chat-head"><span class="av">A</span><span><b>Alice and Mike</b>4-room HDB, Ang Mo Kio</span></figcaption><div class="chat-body"><p class="bub">We are very happy that finally our unit is sold</p><p class="bub">We do not need to worry about having to be penalised for late key collection of our new HDB</p><p class="bub">Eileen has really helped us, from the HDB appeal for later key collection to collecting our keys. We appreciate it</p></div></figure><figure class="chat"><figcaption class="chat-head"><span class="av">M</span><span><b>MA</b>3-bedroom condo, Bartley</span></figcaption><div class="chat-body"><p class="bub">We are very pleased with Eileen's persistence in asking us to review the offer soonest</p><p class="bub">She got us a higher offer than before, and fast too, after the viewing</p><p class="bub">Cos if we missed it, we might miss our next upgrade</p></div></figure><figure class="chat"><figcaption class="chat-head"><span class="av">J</span><span><b>JG</b>2-bedroom condo, Pasir Ris</span></figcaption><div class="chat-body"><p class="bub">We are very happy that finally our unit is sold</p><p class="bub">Thank you for your care and concern for us, not just as an agent but like a family friend</p></div></figure></div>
+    <div class="shots"><figure class="shot"><div class="shot-frame" style="aspect-ratio:924/1560"><img src="img/wa/wa-vk.png" alt="WhatsApp messages from VK, Cluster house, Ang Mo Kio" loading="lazy"></div><figcaption><b>VK</b>Cluster house, Ang Mo Kio</figcaption></figure><figure class="shot"><div class="shot-frame" style="aspect-ratio:924/1130"><img src="img/wa/wa-alice-mike.png" alt="WhatsApp messages from Alice and Mike, 4-room HDB, Ang Mo Kio" loading="lazy"></div><figcaption><b>Alice and Mike</b>4-room HDB, Ang Mo Kio</figcaption></figure><figure class="shot"><div class="shot-frame" style="aspect-ratio:924/1090"><img src="img/wa/wa-ma.png" alt="WhatsApp messages from MA, 3-bedroom condo, Bartley" loading="lazy"></div><figcaption><b>MA</b>3-bedroom condo, Bartley</figcaption></figure></div>
+    <p class="illus">Conversations recreated from each seller's message, shared with their permission.</p>
   </div>
 </section>
 
@@ -407,7 +416,7 @@ setTimeout(function(){document.documentElement.classList.add('ready')},1600);
       <details><summary>I already have an agent. Can I still talk to you?</summary><p>Yes. Many sellers speak to me for a second look at their pricing and timing. I'll share what I think, and you decide what to do.</p></details>
       <details><summary>I've bought my next home. Is it too early to talk?</summary><p>No, this is the best time. Knowing how long homes in your block take to sell lets you plan your listing around your key date.</p></details>
       <details><summary>I'm selling an HDB flat. Can you help?</summary><p>Yes. I sell HDB flats, condos and landed homes. The 4F check works for all of them.</p></details>
-      <details><summary>What happens after I fill in the form?</summary><p>I'll WhatsApp you within 1 working day to set a time for the call.</p></details>
+      <details><summary>What happens after I fill in the form?</summary><p>My AI assistant will help you set an appointment on the next page.</p></details>
     </div>
   </div>
 </section>
@@ -433,12 +442,12 @@ setTimeout(function(){document.documentElement.classList.add('ready')},1600);
         <div class="field"><label for="block">Block or estate</label><input id="block" name="block" placeholder="e.g. Blk 504C Yishun" required><span class="err">Please tell me your block or estate.</span></div>
         <div class="field"><label for="when">When do you need to sell by?</label><select id="when" name="when"><option value="">Not sure yet</option><option>Within 3 months</option><option>3 to 6 months</option><option>More than 6 months</option></select></div>
         <button class="btn" type="submit">Get my free 4F check</button>
-        <p class="fine">Free, no obligation. I'll WhatsApp you within 1 working day to set a time.</p>
+        <p class="fine">Free, no obligation. My AI assistant will help you set an appointment on the next page.</p>
       </div>
       <div class="done" role="status" aria-live="polite">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-6.5"/></svg>
         <h3>Thank you. I'll be in touch.</h3>
-        <p>Expect a WhatsApp from me within 1 working day to set a time.</p>
+        <p>My AI assistant will help you set an appointment on the next page.</p>
       </div>
     </form>
   </div>
@@ -467,6 +476,10 @@ setTimeout(function(){document.documentElement.classList.add('ready')},1600);
   f.querySelectorAll('input,select').forEach(function(el){
     el.addEventListener('input',function(){if(el.checkValidity())el.closest('.field').classList.remove('bad')});
   });
+  var hl={'2':'Stuck on the Market for Months? Get Your Home <mark>Sold in Weeks</mark> with My <em>4F Framework</em>',
+          '3':'Your Home Can Still <mark>Sell in Weeks</mark>, Even After 1.5 Years on the Market'};
+  var hq=new URLSearchParams(location.search).get('h');
+  if(hl[hq])document.getElementById('h-hero').innerHTML=hl[hq];
   var hv=document.getElementById('hv'),snd=document.getElementById('snd');
   snd.addEventListener('click',function(){hv.setAttribute("data-on","");hv.controls=true;hv.parentNode.classList.add('on');hv.play()});
   var wa=document.getElementById('wa'),seen=new Set();
